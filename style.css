@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   border: 5px solid black;
-  box-shadow: 2px 2px 5px;
+  box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 15px;
 }
 .square {
   width: 12.5%;
