@@ -19,7 +19,7 @@ To run the Chess Move Animator locally, follow these steps:
 1. Clone this repository to your local machine.
 2. Open `index.html` in your web browser.
 
-Alternatively, you can [view the live demo here](#).
+Alternatively, you can [view the live demo here](https://nitigya-joshi.github.io/KingMover/).
 
 ## Usage
 
