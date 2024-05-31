@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess Task</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="controls">
+        <div class="src">
+          <label for="start">Start Position:</label>
+          <input type="text" id="start" placeholder="1,1" />
+          <button id="setStart">Set Start</button>
+        </div>
+        <div class="dest">
+          <label for="destination">Destination:</label>
+          <input type="text" id="destination" placeholder="8,4" />
+          <button id="setDestination">Set Destination</button>
+        </div>
+      </div>
+
+      <div class="chessBoard">
+        <!--8th Rank -->
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black">
+          <div class="rank whiteText">8</div>
+        </div>
+        <!--7th Rank -->
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white">
+          <div class="rank blackText">7</div>
+        </div>
+        <!--6th Rank -->
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black">
+          <div class="rank whiteText">6</div>
+        </div>
+        <!--5th Rank -->
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white">
+          <div class="rank blackText">5</div>
+        </div>
+        <!--4th Rank -->
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black">
+          <div class="rank whiteText">4</div>
+        </div>
+        <!--3rd Rank -->
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white">
+          <div class="rank blackText">3</div>
+        </div>
+        <!--2nd Rank -->
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black">
+          <div class="rank whiteText">2</div>
+        </div>
+        <!--1st Rank -->
+        <div class="square black">
+          <div class="coordinate whiteText">1</div>
+          <div class="piece king" color="white">
+            <img src="White-King.png" alt="King" />
+          </div>
+        </div>
+        <div class="square white">
+          <div class="coordinate blackText">2</div>
+        </div>
+        <div class="square black">
+          <div class="coordinate whiteText">3</div>
+        </div>
+        <div class="square white">
+          <div class="coordinate blackText">4</div>
+        </div>
+        <div class="square black">
+          <div class="coordinate whiteText">5</div>
+        </div>
+        <div class="square white">
+          <div class="coordinate blackText">6</div>
+        </div>
+        <div class="square black">
+          <div class="coordinate whiteText">7</div>
+        </div>
+        <div class="square white">
+          <div class="rank blackText">1</div>
+          <div class="coordinate blackText">8</div>
+        </div>
+      </div>
+    </div>
+    <div class="steps"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
