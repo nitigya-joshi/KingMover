@@ -1,80 +1,3 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//   const board = document.getElementById("board");
-//   const moveKingButton = document.getElementById("moveKing");
-
-//   // Create the chessboard
-//   for (let i = 0; i < 64; i++) {
-//     const square = document.createElement("div");
-//     square.classList.add("square");
-//     square.dataset.index = i;
-//     board.appendChild(square);
-//   }
-
-//   // Function to convert board index to (row, col)
-//   const indexToCoord = (index) => [Math.floor(index / 8), index % 8];
-
-//   // Function to convert (row, col) to board index
-//   const coordToIndex = (row, col) => row * 8 + col;
-
-//   // Place the king initially
-//   let kingIndex = 0;
-//   const king = document.createElement("div");
-//   king.classList.add("king");
-//   king.textContent = "♔";
-//   document
-//     .querySelector(`.square[data-index="${kingIndex}"]`)
-//     .appendChild(king);
-
-//   // Get shortest path
-//   const getShortestPath = (start, end) => {
-//     const [startX, startY] = start;
-//     const [endX, endY] = end;
-//     let path = [];
-//     let x = startX;
-//     let y = startY;
-//     while (x !== endX || y !== endY) {
-//       if (x < endX) x++;
-//       else if (x > endX) x--;
-//       if (y < endY) y++;
-//       else if (y > endY) y--;
-//       path.push([x, y]);
-//     }
-//     return path;
-//   };
-
-//   // Move the king along the path
-//   const moveKing = (path) => {
-//     if (path.length === 0) return;
-//     const [row, col] = path.shift();
-//     const newIndex = coordToIndex(row, col);
-//     kingIndex = newIndex;
-//     document
-//       .querySelector(`.square[data-index="${kingIndex}"]`)
-//       .appendChild(king);
-//     setTimeout(() => moveKing(path), 500);
-//   };
-
-//   // Handle the move button click
-//   moveKingButton.addEventListener("click", () => {
-//     const startInput = document
-//       .getElementById("start")
-//       .value.split(",")
-//       .map(Number);
-//     const destinationInput = document
-//       .getElementById("destination")
-//       .value.split(",")
-//       .map(Number);
-
-//     const start = startInput;
-//     const end = destinationInput;
-
-//     const path = getShortestPath(start, end);
-//     moveKing(path);
-//   });
-// });
-
-// new code
-
 document.addEventListener("DOMContentLoaded", () => {
     const setStartButton = document.getElementById("setStart");
     const setDestinationButton = document.getElementById("setDestination");
@@ -109,14 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!validateInput(destRow, destCol)) return;
 
-        //disable setStart and setDestination buttons
+        //disable buttons before animation starts
         setDestinationButton.disabled = true;
         setStartButton.disabled = true;
-        kingDestiny(destRow, destCol);
-       
-        // setDestinationButton.disabled = false;
-        // setStartButton.disabled = false;
 
+        kingDestiny(destRow, destCol);
         currentKingPosition = { row: destRow, col: destCol };
     });
 
@@ -125,9 +45,11 @@ document.addEventListener("DOMContentLoaded", () => {
             [currentKingPosition.row, currentKingPosition.col],
             [destRow, destCol]
         );
-        
-        const steps = document.querySelector(".steps");
-        steps.textContent = `Steps: ${path.length}`;
+
+        setTimeout(() => {
+            setDestinationButton.disabled = false;
+            setStartButton.disabled = false;
+        }, path.length * 500);
 
         // setting timer for each movement
         path.forEach((position, index) => {
